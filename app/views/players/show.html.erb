@@ -1,0 +1,33 @@
+<p>
+  <b>Username:</b>
+  <%=h @player.username %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @player.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @player.lastname %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @player.country %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @player.gender %>
+</p>
+
+<p>
+  <b>Birthdate:</b>
+  <%=h @player.birthdate %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

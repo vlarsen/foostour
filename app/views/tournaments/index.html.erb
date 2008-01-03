@@ -1,0 +1,28 @@
+<h1>Listing tournaments</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Structure</th>
+    <th>Level</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+  </tr>
+
+<% for tournament in @tournaments %>
+  <tr>
+    <td><%=h tournament.name %></td>
+    <td><%=h tournament.structure %></td>
+    <td><%=h tournament.level %></td>
+    <td><%=h tournament.startdate %></td>
+    <td><%=h tournament.enddate %></td>
+    <td><%= link_to 'Show', tournament %></td>
+    <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+    <td><%= link_to 'Destroy', tournament, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tournament', new_tournament_path %>

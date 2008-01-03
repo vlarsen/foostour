@@ -1,0 +1,41 @@
+<h1>New player</h1>
+
+<%= error_messages_for :player %>
+
+<% form_for(@player) do |f| %>
+  <p>
+    <b>Username</b><br />
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <b>Firstname</b><br />
+    <%= f.text_field :firstname %>
+  </p>
+
+  <p>
+    <b>Lastname</b><br />
+    <%= f.text_field :lastname %>
+  </p>
+
+  <p>
+    <b>Country</b><br />
+    <%= f.text_field :country %>
+  </p>
+
+  <p>
+    <b>Gender</b><br />
+    <%= f.text_field :gender %>
+  </p>
+
+  <p>
+    <b>Birthdate</b><br />
+    <%= f.date_select :birthdate, :start_year => 1950, :end_year => 1990, :use_month_numbers => true, :default => { :year => 1970, :month => 1, :day => 1} %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', players_path %>

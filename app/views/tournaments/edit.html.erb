@@ -1,0 +1,37 @@
+<h1>Editing tournament</h1>
+
+<%= error_messages_for :tournament %>
+
+<% form_for(@tournament) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Structure</b><br />
+    <%= f.text_field :structure %>
+  </p>
+
+  <p>
+    <b>Level</b><br />
+    <%= f.text_field :level %>
+  </p>
+
+  <p>
+    <b>Startdate</b><br />
+    <%= f.date_select :startdate %>
+  </p>
+
+  <p>
+    <b>Enddate</b><br />
+    <%= f.date_select :enddate %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tournament %> |
+<%= link_to 'Back', tournaments_path %>
