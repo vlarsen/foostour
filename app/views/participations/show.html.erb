@@ -1,0 +1,23 @@
+<p>
+  <b>Player:</b>
+  <%=h @participation.player_id %>
+</p>
+
+<p>
+  <b>Tournament:</b>
+  <%=h @participation.tournament_id %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%=h @participation.rank %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @participation.points %>
+</p>
+
+
+<%= link_to 'Edit', edit_participation_path(@participation) %> |
+<%= link_to 'Back', participations_path %>
