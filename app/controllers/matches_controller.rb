@@ -26,7 +26,7 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
     @players = Player.find(:all, :order => "firstname")
-    @tournaments = Tournament.find(:all, :order => "startdate")
+    @tournaments = Tournament.all_active
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,7 +38,7 @@ class MatchesController < ApplicationController
   def edit
     @match = Match.find(params[:id])
     @players = Player.find(:all, :order => "firstname")
-    @tournaments = Tournament.find(:all, :order => "startdate")
+    @tournaments = Tournament.all_active
   end
 
   # POST /matches

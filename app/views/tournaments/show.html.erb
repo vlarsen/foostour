@@ -23,6 +23,11 @@
   <%=h @tournament.enddate %>
 </p>
 
+<p>
+  <b>Active:</b>
+  <%=h @tournament.active? %>
+</p>
+
 <%= link_to 'New match', new_match_path %>
 
 <h2>Unplayed Matches</h2>
