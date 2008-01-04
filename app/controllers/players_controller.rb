@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  layout "foostour"
+  
   # GET /players
   # GET /players.xml
   def index

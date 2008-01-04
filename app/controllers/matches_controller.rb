@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+  layout "foostour"
+  
   # GET /matches
   # GET /matches.xml
   def index

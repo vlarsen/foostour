@@ -1,4 +1,6 @@
 class TournamentsController < ApplicationController
+  layout "foostour"
+  
   # GET /tournaments
   # GET /tournaments.xml
   def index

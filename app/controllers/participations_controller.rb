@@ -1,4 +1,6 @@
 class ParticipationsController < ApplicationController
+  layout "foostour"
+  
   # GET /participations
   # GET /participations.xml
   def index
