@@ -1,9 +1,9 @@
 <h1>Listing matches</h1>
 
-<table>
+<table border="1">
   <tr>
-    <th>Team a</th>
-    <th>Team b</th>
+    <th>Team A</th>
+    <th>Team B</th>
     <th>Tournament</th>
     <th>Round</th>
     <th>Played at</th>
@@ -13,13 +13,13 @@
 
 <% for match in @matches %>
   <tr>
-    <td><%=h match.team_a_id %></td>
-    <td><%=h match.team_b_id %></td>
-    <td><%=h match.tournament_id %></td>
+    <td><%=h match.player_a.username %></td>
+    <td><%=h match.player_b.username %></td>
+    <td><%=h match.tournament.name %></td>
     <td><%=h match.round %></td>
-    <td><%=h match.played_at %></td>
+    <td><%=h match.played_at.to_s(:db) %></td>
     <td><%=h match.scores %></td>
-    <td><%=h match.winner_id %></td>
+    <td><%=h match.winner ? match.winner.username : "" %></td>
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>
     <td><%= link_to 'Destroy', match, :confirm => 'Are you sure?', :method => :delete %></td>

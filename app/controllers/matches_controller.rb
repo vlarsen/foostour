@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.xml
   def index
-    @matches = Match.find(:all)
+    @matches = Match.find(:all, :order => "played_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,8 +37,7 @@ class MatchesController < ApplicationController
   # GET /matches/1/edit
   def edit
     @match = Match.find(params[:id])
-    @players = Player.find(:all, :order => "firstname")
-    @tournaments = Tournament.all_active
+    @players = [ @match.player_a, @match.player_b ]
   end
 
   # POST /matches

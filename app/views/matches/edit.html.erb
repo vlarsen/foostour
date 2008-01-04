@@ -5,17 +5,17 @@
 <% form_for(@match) do |f| %>
   <p>
     <b>Team a</b><br />
-    <%= f.collection_select :team_a_id, @players, :id, :fullname %>
+    <%= h @match.player_a.fullname %>
   </p>
 
   <p>
     <b>Team b</b><br />
-    <%= f.collection_select :team_b_id, @players, :id, :fullname %>
+    <%= h @match.player_b.fullname %>
   </p>
 
   <p>
     <b>Tournament</b><br />
-    <%= f.collection_select :tournament_id, @tournaments, :id, :name %>
+    <%= h @match.tournament.name %>
   </p>
 
   <p>
@@ -35,7 +35,7 @@
 
   <p>
     <b>Winner</b><br />
-    <%= f.collection_select :winner_id, @players, :id, :fullname %>
+    <%= f.collection_select :winner_id, @players, :id, :fullname, :include_blank => true %>
   </p>
 
   <p>

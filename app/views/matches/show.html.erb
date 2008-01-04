@@ -30,7 +30,7 @@
 
 <p>
   <b>Winner:</b>
-  <%=h @match.winner.fullname %>
+  <%=h @match.winner ? @match.winner.fullname : "" %>
 </p>
 
 
