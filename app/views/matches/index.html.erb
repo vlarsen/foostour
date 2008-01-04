@@ -13,13 +13,13 @@
 
 <% for match in @matches %>
   <tr>
-    <td><%=h match.team_a %></td>
-    <td><%=h match.team_b %></td>
+    <td><%=h match.team_a_id %></td>
+    <td><%=h match.team_b_id %></td>
     <td><%=h match.tournament_id %></td>
     <td><%=h match.round %></td>
     <td><%=h match.played_at %></td>
     <td><%=h match.scores %></td>
-    <td><%=h match.winner %></td>
+    <td><%=h match.winner_id %></td>
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>
     <td><%= link_to 'Destroy', match, :confirm => 'Are you sure?', :method => :delete %></td>
