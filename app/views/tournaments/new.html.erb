@@ -10,12 +10,12 @@
 
   <p>
     <b>Structure</b><br />
-    <%= f.text_field :structure %>
+    <%= f.select :structure, %w(single double single-q double-q) %>
   </p>
 
   <p>
     <b>Level</b><br />
-    <%= f.text_field :level %>
+    <%= f.select :level, %w(pro master international wcs) %>
   </p>
 
   <p>
