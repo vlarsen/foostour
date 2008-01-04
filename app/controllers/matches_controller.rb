@@ -25,6 +25,8 @@ class MatchesController < ApplicationController
   # GET /matches/new.xml
   def new
     @match = Match.new
+    @players = Player.find(:all, :order => "firstname")
+    @tournaments = Tournament.find(:all, :order => "startdate")
 
     respond_to do |format|
       format.html # new.html.erb
