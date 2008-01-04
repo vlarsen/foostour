@@ -37,6 +37,8 @@ class MatchesController < ApplicationController
   # GET /matches/1/edit
   def edit
     @match = Match.find(params[:id])
+    @players = Player.find(:all, :order => "firstname")
+    @tournaments = Tournament.find(:all, :order => "startdate")
   end
 
   # POST /matches
