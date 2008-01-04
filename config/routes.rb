@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :matches
+
   map.resources :participations
 
   map.resources :tournaments

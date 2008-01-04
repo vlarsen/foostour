@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team_a: 1
+  team_b: 1
+  tournament_id: 1
+  round: 1
+  played_at: 2008-01-04 12:40:06
+  scores: MyString
+  winner: 1
+
+two:
+  team_a: 1
+  team_b: 1
+  tournament_id: 1
+  round: 1
+  played_at: 2008-01-04 12:40:06
+  scores: MyString
+  winner: 1

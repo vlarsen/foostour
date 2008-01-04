@@ -1,0 +1,46 @@
+<h1>New match</h1>
+
+<%= error_messages_for :match %>
+
+<% form_for(@match) do |f| %>
+  <p>
+    <b>Team a</b><br />
+    <%= f.text_field :team_a %>
+  </p>
+
+  <p>
+    <b>Team b</b><br />
+    <%= f.text_field :team_b %>
+  </p>
+
+  <p>
+    <b>Tournament</b><br />
+    <%= f.text_field :tournament_id %>
+  </p>
+
+  <p>
+    <b>Round</b><br />
+    <%= f.text_field :round %>
+  </p>
+
+  <p>
+    <b>Played at</b><br />
+    <%= f.datetime_select :played_at %>
+  </p>
+
+  <p>
+    <b>Scores</b><br />
+    <%= f.text_field :scores %>
+  </p>
+
+  <p>
+    <b>Winner</b><br />
+    <%= f.text_field :winner %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', matches_path %>

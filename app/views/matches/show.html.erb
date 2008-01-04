@@ -1,0 +1,38 @@
+<p>
+  <b>Team a:</b>
+  <%=h @match.team_a %>
+</p>
+
+<p>
+  <b>Team b:</b>
+  <%=h @match.team_b %>
+</p>
+
+<p>
+  <b>Tournament:</b>
+  <%=h @match.tournament_id %>
+</p>
+
+<p>
+  <b>Round:</b>
+  <%=h @match.round %>
+</p>
+
+<p>
+  <b>Played at:</b>
+  <%=h @match.played_at %>
+</p>
+
+<p>
+  <b>Scores:</b>
+  <%=h @match.scores %>
+</p>
+
+<p>
+  <b>Winner:</b>
+  <%=h @match.winner %>
+</p>
+
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>
