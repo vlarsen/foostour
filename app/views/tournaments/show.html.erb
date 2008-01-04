@@ -23,10 +23,43 @@
   <%=h @tournament.enddate %>
 </p>
 
-<h2>Participants</h2>
-<% for participation in @participations %>
-<p><%= h participation.rank %> <%= h participation.player.fullname %></p>
+<%= link_to 'New match', new_match_path %>
+
+<h2>Unplayed Matches</h2>
+<% for match in @tournament.unplayed_matches %>
+<p><%= h match.player_a.username %> vs <%= h match.player_b.username %> (<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>)</p>
 <% end %>
+
+<h2>Played Matches</h2>
+<% for match in @tournament.played_matches %>
+<p><span class="<% match.player_a == match.winner ? 'winner' : 'looser' %>"><%= h match.player_a.username %></span> vs <span class=""><%= h match.player_b.username %></span>: <%= h match.scores %> (<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>)
+<% end %>
+
+<h2>Participants</h2>
+<ul>
+<% for player in @tournament.players %>
+  <li><%= h player.fullname %></li>
+<% end %>
+</ul>
+
+<h2>Results</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Player</th>
+    </tr>
+  </thead>
+  <tbody>
+<% for participation in @tournament.participations %>
+    <tr>
+      <td><%= h participation.rank %></td>
+      <td><%= h participation.player.fullname %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+  
 
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>

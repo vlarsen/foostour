@@ -15,7 +15,7 @@ class TournamentsController < ApplicationController
   def show
     @tournament = Tournament.find(params[:id])
     @participations = @tournament.participations :include => :player
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tournament }
