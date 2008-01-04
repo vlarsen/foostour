@@ -30,7 +30,7 @@
 
   <p>
     <b>Birthdate</b><br />
-    <%= f.date_select :birthdate %>
+    <%= f.date_select :birthdate, :start_year => 1950, :end_year => 1990, :use_month_numbers => true, :default => { :year => 1970, :month => 1, :day => 1}  %>
   </p>
 
   <p>
