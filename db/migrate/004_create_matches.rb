@@ -7,7 +7,7 @@ class CreateMatches < ActiveRecord::Migration
       t.integer :round
       t.datetime :played_at
       t.string :scores
-      t.integer :winner
+      t.integer :winner_id
 
       t.timestamps
     end
