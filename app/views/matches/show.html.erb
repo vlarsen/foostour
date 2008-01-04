@@ -1,16 +1,16 @@
 <p>
   <b>Team a:</b>
-  <%=h @match.team_a_id %>
+  <%=h @match.player_a.fullname %>
 </p>
 
 <p>
   <b>Team b:</b>
-  <%=h @match.team_b_id %>
+  <%=h @match.player_b.fullname %>
 </p>
 
 <p>
   <b>Tournament:</b>
-  <%=h @match.tournament_id %>
+  <%=h @match.tournament.name %>
 </p>
 
 <p>
@@ -30,7 +30,7 @@
 
 <p>
   <b>Winner:</b>
-  <%=h @match.winner_id %>
+  <%=h @match.winner.fullname %>
 </p>
 
 
