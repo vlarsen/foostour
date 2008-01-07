@@ -20,7 +20,7 @@
 
 <p>
   <b>Played at:</b>
-  <%=h @match.played_at %>
+  <%=h @match.played_at ? @match.played_at.to_s(:db) : "" %>
 </p>
 
 <p>
@@ -35,4 +35,5 @@
 
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'New', new_match_path %> |
 <%= link_to 'Back', matches_path %>

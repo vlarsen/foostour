@@ -1,26 +1,26 @@
-<h1>Editing match</h1>
+<h1>Register result in match</h1>
 
 <%= error_messages_for :match %>
 
 <% form_for(@match) do |f| %>
   <p>
-    <b>Team a</b><br />
-    <%= h @match.player_a.fullname %>
+    <b>Team A</b><br />
+    <%= link_to @match.player_a.fullname, player_path(@match.team_a_id) %>
   </p>
 
   <p>
-    <b>Team b</b><br />
-    <%= h @match.player_b.fullname %>
+    <b>Team B</b><br />
+    <%= link_to @match.player_b.fullname, player_path(@match.team_b_id) %>
   </p>
 
   <p>
     <b>Tournament</b><br />
-    <%= h @match.tournament.name %>
+    <%= link_to @match.tournament.name, tournament_path(@match.tournament_id) %>
   </p>
 
   <p>
     <b>Round</b><br />
-    <%= f.text_field :round %>
+    <%= h @match.round %>
   </p>
 
   <p>
@@ -31,6 +31,7 @@
   <p>
     <b>Scores</b><br />
     <%= f.text_field :scores %>
+    <span class="help">Format: a-b/a-b/a-b, i.e. score for each game, separated by /</span>
   </p>
 
   <p>

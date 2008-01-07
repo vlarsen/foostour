@@ -25,7 +25,7 @@
 
   <p>
     <b>Played at</b><br />
-    <%= f.datetime_select :played_at %>
+    <%= f.datetime_select :played_at, :include_blank => true %>
   </p>
 
   <p>
@@ -35,7 +35,7 @@
 
   <p>
     <b>Winner</b><br />
-    <%= f.collection_select :winner_id, @players, :id, :fullname %>
+    <%= f.collection_select :winner_id, @players, :id, :fullname, :include_blank => true %>
   </p>
 
   <p>

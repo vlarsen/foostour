@@ -17,7 +17,7 @@
     <td><%=h match.player_b.username %></td>
     <td><%=h match.tournament.name %></td>
     <td><%=h match.round %></td>
-    <td><%=h match.played_at.to_s(:db) %></td>
+    <td><%=h match.played_at ? match.played_at.to_s(:db) : "" %></td>
     <td><%=h match.scores %></td>
     <td><%=h match.winner ? match.winner.username : "" %></td>
     <td><%= link_to 'Show', match %></td>
