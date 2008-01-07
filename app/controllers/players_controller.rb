@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.find(:all)
+    @players = Player.find(:all, :order => "username")
 
     respond_to do |format|
       format.html # index.html.erb
