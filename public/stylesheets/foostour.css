@@ -72,3 +72,32 @@ div.progressBar div.background {
   width: 0%;
 }
 
+
+
+.menu {
+    background: #ddd;
+    font-size: large;
+    font-weight: bold;
+    padding: 20px;
+}
+.logo {
+    float: right;
+}
+.crumbs {
+    background: #ddd;
+    font-style: italic;
+    font-size: smaller;
+    border-top: solid black 1px;
+    padding: 5px 0px 5px 20px;
+}
+.tournamentinfo {
+    float: left;
+    margin: 10px;
+    padding: 20px;
+}
+.results {
+    float: right;
+    border: solid black 2px;
+    margin: 10px;
+    padding: 20px;
+}
