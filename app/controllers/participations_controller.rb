@@ -27,6 +27,8 @@ class ParticipationsController < ApplicationController
   # GET /participations/new.xml
   def new
     @participation = Participation.new
+    @players = Player.find(:all, :order => "firstname")
+    @tournaments = Tournament.find(:all, :order => "startdate")
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,11 +1,11 @@
 <p>
   <b>Player:</b>
-  <%=h @participation.player_id %>
+  <%= link_to @participation.player.fullname, player_path(@participation.player_id) %>
 </p>
 
 <p>
   <b>Tournament:</b>
-  <%=h @participation.tournament_id %>
+  <%= link_to @participation.tournament.name, tournament_path(@participation.tournament_id) %>
 </p>
 
 <p>

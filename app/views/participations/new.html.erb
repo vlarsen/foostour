@@ -5,12 +5,12 @@
 <% form_for(@participation) do |f| %>
   <p>
     <b>Player</b><br />
-    <%= f.text_field :player_id %>
+    <%= f.collection_select :player_id, @players, :id, :fullname %>
   </p>
 
   <p>
     <b>Tournament</b><br />
-    <%= f.text_field :tournament_id %>
+    <%= f.collection_select :tournament_id, @tournaments, :id, :name %>
   </p>
 
   <p>

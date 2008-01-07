@@ -10,8 +10,8 @@
 
 <% for participation in @participations %>
   <tr>
-    <td><%=h participation.player_id %></td>
-    <td><%=h participation.tournament_id %></td>
+    <td><%=h participation.player.fullname %></td>
+    <td><%=h participation.tournament.name %></td>
     <td><%=h participation.rank %></td>
     <td><%=h participation.points %></td>
     <td><%= link_to 'Show', participation %></td>
