@@ -9,4 +9,9 @@ class Player < ActiveRecord::Base
   def fullname
     firstname + " " + lastname
   end
+  
+  def total_points
+    participations.inject(0) {|sum, p| sum + (p.points != nil ? p.points : 0) }
+  end
+  
 end
