@@ -18,8 +18,8 @@
     <td><%=h tournament.startdate %></td>
     <td><%=h tournament.enddate %></td>
     <td><%=h tournament.active? %></td>
-    <td><%= link_to 'Show', tournament %></td>
-    <td><%= link_to 'Edit', edit_tournament_path(tournament) %></td>
+    <td><%= tournament.active? ? (link_to 'Show', tournament) : "" %></td>
+    <td><%= tournament.active? ? "" : (link_to 'Edit', edit_tournament_path(tournament)) %></td>
     <td><%= link_to 'Destroy', tournament, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
