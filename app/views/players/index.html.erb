@@ -15,7 +15,7 @@
     <td><%=h player.username %></td>
     <td><%=h player.firstname %></td>
     <td><%=h player.lastname %></td>
-    <td><%=h player.country %></td>
+    <td><%=image_tag "flags/#{player.country.downcase}.gif" %></td>
     <td><%=h player.gender %></td>
     <td><%=h player.birthdate %></td>
     <td><%= link_to 'Show', player %></td>
