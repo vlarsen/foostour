@@ -1,16 +1,16 @@
 <p>
   <b>Team a:</b>
-  <%=h @match.player_a.fullname %>
+  <%= link_to @match.player_a.fullname, player_path(@match.team_a_id) %>
 </p>
 
 <p>
   <b>Team b:</b>
-  <%=h @match.player_b.fullname %>
+  <%= link_to @match.player_b.fullname, player_path(@match.team_b_id) %>
 </p>
 
 <p>
   <b>Tournament:</b>
-  <%=h @match.tournament.name %>
+  <%= link_to @match.tournament.name, tournament_path(@match.tournament_id) %>
 </p>
 
 <p>

@@ -62,10 +62,10 @@
 
 <h2>Unplayed Matches</h2>
 <% for match in @tournament.unplayed_matches %>
-<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%= h match.player_a.username %> vs <%= h match.player_b.username %> </p>
+<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %> </p>
 <% end %>
 
 <h2>Played Matches</h2>
 <% for match in @tournament.played_matches %>
-<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <span class="<% match.player_a == match.winner ? 'winner' : 'looser' %>"><%= h match.player_a.username %></span> vs <span class=""><%= h match.player_b.username %></span>: <%= h match.scores %> 
+<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <span class="<% match.player_a == match.winner ? 'winner' : 'looser' %>"><%= h match.player_a.username %></span> vs <span class=""><%= h match.player_b.username %></span>: <%= h match.scores %> 
 <% end %>
