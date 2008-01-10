@@ -90,6 +90,11 @@ div.progressBar div.background {
     border-top: solid black 1px;
     padding: 5px 0px 5px 20px;
 }
+div.help {
+    float: right;
+    border: solid gray 1px;
+    padding: 5px;
+}
 .tournamentinfo {
     float: left;
     margin: 10px;
