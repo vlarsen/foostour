@@ -95,6 +95,18 @@ div.help {
     border: solid gray 1px;
     padding: 5px;
 }
+
+table.chart {
+    border-collapse: collapse;
+    border: solid black 2px;
+}
+table.chart td {
+    border: solid black 1px;
+    text-align: center;
+    padding: 0.3em;
+    height: 3em;
+}
+
 .tournamentinfo {
     float: left;
     margin: 10px;

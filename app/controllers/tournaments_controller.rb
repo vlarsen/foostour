@@ -23,6 +23,16 @@ class TournamentsController < ApplicationController
       format.xml  { render :xml => @tournament }
     end
   end
+  
+  def chart
+    @tournament = Tournament.find(params[:id])
+    @participations = @tournament.participations
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @tournament }
+    end
+  end
 
   # GET /tournaments/new
   # GET /tournaments/new.xml
