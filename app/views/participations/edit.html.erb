@@ -1,45 +1,47 @@
-<h1>Editing participation</h1>
+<div class="yui-t6">
+  <div id="yui-main">
+    <div class="yui-b">
+      <%= error_messages_for :participation %>
 
-<div class="help">
-  <table>
-    <tr>
-      <th>Rank</th><th>Points</th>
-    </tr>
-    <tr><td>1</td><td>35</td></tr>
-    <tr><td>2</td><td>30</td></tr>
-    <tr><td>3</td><td>25</td></tr>
-    <tr><td>4</td><td>20</td></tr>
-    <tr><td>5</td><td>18</td></tr>
-    <tr><td>9</td><td>13</td></tr>
-  </table>
-</div>
-<%= error_messages_for :participation %>
+      <% form_for(@participation) do |f| %>
+        <p>
+          <b>Player</b><br />
+          <%= h @participation.player.fullname %>
+        </p>
 
-<% form_for(@participation) do |f| %>
-  <p>
-    <b>Player</b><br />
-    <%= h @participation.player.fullname %>
-  </p>
+        <p>
+          <b>Tournament</b><br />
+          <%= h @participation.tournament.name %>
+        </p>
 
-  <p>
-    <b>Tournament</b><br />
-    <%= h @participation.tournament.name %>
-  </p>
+        <p>
+          <b>Rank</b><br />
+          <%= f.text_field :rank %>
+        </p>
 
-  <p>
-    <b>Rank</b><br />
-    <%= f.text_field :rank %>
-  </p>
+        <p>
+          <b>Points</b><br />
+          <%= f.text_field :points %>
+        </p>
 
-  <p>
-    <b>Points</b><br />
-    <%= f.text_field :points %>
-  </p>
+        <p>
+          <%= f.submit "Update" %>
+        </p>
+      <% end %>
 
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+      <%= link_to 'Show', @participation %> |
+      <%= link_to 'Back', participations_path %>
+    </div> <!-- .yui-b -->
+  </div> <!-- #yui-main -->
+  <div class="yui-b">
+    <table>
+      <tr>
+        <th>Rank</th><th>Points</th>
+      </tr>
+<% Point.table[@participation.tournament.structure][@participation.tournament.level].each do |p| %>
+      <tr><td><%=h p[0]%></td><td><%=h p[1]%></td></tr>
 <% end %>
+    </table>
+  </div> <!-- .yui-b -->
+</div> <!-- .yui-t6 -->
 
-<%= link_to 'Show', @participation %> |
-<%= link_to 'Back', participations_path %>

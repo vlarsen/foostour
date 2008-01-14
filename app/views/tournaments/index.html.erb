@@ -1,23 +1,17 @@
-<h1>Listing tournaments</h1>
-
 <table>
   <tr>
     <th>Name</th>
     <th>Structure</th>
     <th>Level</th>
-    <th>Startdate</th>
-    <th>Enddate</th>
-    <th>Active</th>
+    <th>Period</th>
   </tr>
 
 <% for tournament in @tournaments %>
-  <tr>
+  <tr class="tournament-<%=h tournament.active? ? "active" : "inactive" %>">
     <td><%=h tournament.name %></td>
     <td><%=h tournament.structure %></td>
     <td><%=h tournament.level %></td>
-    <td><%=h tournament.startdate %></td>
-    <td><%=h tournament.enddate %></td>
-    <td><%=h tournament.active? %></td>
+    <td><%=h tournament.startdate %>/<%=h tournament.enddate %></td>
     <td><%= tournament.active? ? (link_to 'Show', tournament) : "" %></td>
     <td><%= tournament.active? ? "" : (link_to 'Edit', edit_tournament_path(tournament)) %></td>
     <td><%= link_to 'Destroy', tournament, :confirm => 'Are you sure?', :method => :delete %></td>

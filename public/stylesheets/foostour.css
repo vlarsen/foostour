@@ -107,14 +107,10 @@ table.chart td {
     height: 3em;
 }
 
-.tournamentinfo {
-    float: left;
-    margin: 10px;
-    padding: 20px;
+.tournament-active {
+    color: #080;
 }
-.results {
-    float: right;
-    border: solid black 2px;
-    margin: 10px;
-    padding: 20px;
+
+.tournament-inactive {
+    color: #800;
 }

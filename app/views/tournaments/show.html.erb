@@ -1,71 +1,56 @@
-<div class="tournamentinfo">
-  <p>
-  <b>Name:</b>
-  <%=h @tournament.name %>
-</p>
+<div class="yui-t6">
+<div id="yui-main">
+  <div class="yui-b">
+<div class="yui-u">
+  <h1 class="tournament-<%=h @tournament.active? ? "active" : "inactive" %>"><%=h @tournament.name %></h1>
+  <p><%=h @tournament.structure %> <%=h @tournament.level %></p>
+  <p><%=h @tournament.startdate %>/<%=h @tournament.enddate %></p>
+    <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+    <%= link_to 'Back', tournaments_path %>
+</div> <!-- .yui-u -->
 
+<div class="yui-u">
+
+
+    <h2>Unplayed Matches</h2>
 <p>
-  <b>Structure:</b>
-  <%=h @tournament.structure %>
+    <% for match in @tournament.unplayed_matches %>
+(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %><br/>
+    <% end %>
+
+    <%= link_to 'New match', new_match_path %>
 </p>
 
-<p>
-  <b>Level:</b>
-  <%=h @tournament.level %>
-</p>
+    <h2>Played Matches</h2>
+      <% for match in @tournament.played_matches %>
+(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %> <%= h match.scores %><br/>
+      <% end %>
+</div> <!-- .yui-u -->
+</div> <!-- .yui-b -->
+</div> <!-- #yui-main -->
+  <div class="yui-b">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Points</th>
+          <th>Player</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% for participation in @tournament.participations %>
+        <tr>
+          <td><%= h participation.rank %></td>
+          <td><%= h participation.points %></td>
+          <td><%= link_to participation.player.fullname, player_path(participation.player_id) %></td>
+          <td><%= link_to "Edit", edit_participation_path(participation.id) %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New participation', new_participation_path %>
+    
+  </div> <!-- .yui-b -->
+</div> <!-- .yui-t6 -->
 
-<p>
-  <b>Startdate:</b>
-  <%=h @tournament.startdate %>
-</p>
 
-<p>
-  <b>Enddate:</b>
-  <%=h @tournament.enddate %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%=h @tournament.active? %>
-</p>
-<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-<%= link_to 'Back', tournaments_path %>
-</div>
-
-<div class="results">
-  <h2>Results</h2>
-<%= link_to 'New participation', new_participation_path %>
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Points</th>
-      <th>Player</th>
-    </tr>
-  </thead>
-  <tbody>
-<% for participation in @tournament.participations %>
-    <tr>
-      <td><%= h participation.rank %></td>
-      <td><%= h participation.points %></td>
-      <td><%= link_to participation.player.fullname, player_path(participation.player_id) %></td>
-      <td><%= link_to "Edit", edit_participation_path(participation.id) %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-</div>
-
-<hr style="clear: left;"/>
-
-<%= link_to 'New match', new_match_path %>
-
-<h2>Unplayed Matches</h2>
-<% for match in @tournament.unplayed_matches %>
-<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %> </p>
-<% end %>
-
-<h2>Played Matches</h2>
-<% for match in @tournament.played_matches %>
-<p>(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <span class="<% match.player_a == match.winner ? 'winner' : 'looser' %>"><%= h match.player_a.username %></span> vs <span class=""><%= h match.player_b.username %></span>: <%= h match.scores %> 
-<% end %>
