@@ -13,7 +13,7 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
+a:visited { color: #000; }
 a:hover { color: #fff; background-color:#000; }
 
 .fieldWithErrors {
@@ -75,7 +75,7 @@ div.progressBar div.background {
 
 
 .menu {
-    background: #ddd;
+    background: #E4EEF1;
     font-size: large;
     font-weight: bold;
     padding: 20px;
@@ -84,11 +84,11 @@ div.progressBar div.background {
     float: right;
 }
 .crumbs {
-    background: #ddd;
+    background: #C4CEF1;
     font-style: italic;
     font-size: smaller;
     border-top: solid black 1px;
-    padding: 5px 0px 5px 20px;
+    padding: 0px 0px 0px 20px;
 }
 div.help {
     float: right;
@@ -113,4 +113,8 @@ table.chart td {
 
 .tournament-inactive {
     color: #800;
+}
+
+.results {
+    background-color: #E4EEF1;
 }

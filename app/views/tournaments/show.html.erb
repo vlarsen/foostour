@@ -2,15 +2,12 @@
 <div id="yui-main">
   <div class="yui-b">
 <div class="yui-u">
-  <h1 class="tournament-<%=h @tournament.active? ? "active" : "inactive" %>"><%=h @tournament.name %></h1>
-  <p><%=h @tournament.structure %> <%=h @tournament.level %></p>
-  <p><%=h @tournament.startdate %>/<%=h @tournament.enddate %></p>
-    <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-    <%= link_to 'Back', tournaments_path %>
+  <h1 class="tournament-<%=h @tournament.active? ? "active" : "inactive" %>"><%= link_to @tournament.name, edit_tournament_path(@tournament) %> <%=h @tournament.startdate %>/<%=h @tournament.enddate %></h1>
+  <p> <%= image_tag Tournament.logo(@tournament.level) %></p>
 </div> <!-- .yui-u -->
 
 <div class="yui-u">
-
+  <p><%=h Tournament.structure_descr(@tournament.structure) %></p>
 
     <h2>Unplayed Matches</h2>
 <p>
@@ -29,7 +26,7 @@
 </div> <!-- .yui-b -->
 </div> <!-- #yui-main -->
   <div class="yui-b">
-    <table>
+    <table class="results">
       <thead>
         <tr>
           <th>Rank</th>
@@ -40,7 +37,7 @@
       <tbody>
     <% for participation in @tournament.participations %>
         <tr>
-          <td><%= h participation.rank %></td>
+          <td><%= h participation.rank %> <%= medal_img(participation.rank)%></td>
           <td><%= h participation.points %></td>
           <td><%= link_to participation.player.fullname, player_path(participation.player_id) %></td>
           <td><%= link_to "Edit", edit_participation_path(participation.id) %></td>
