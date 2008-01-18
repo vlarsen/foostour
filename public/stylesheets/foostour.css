@@ -123,3 +123,7 @@ table.chart td {
 .results {
     background-color: #E4EEF1;
 }
+
+.matchwinner {
+    font-weight: bold;
+}

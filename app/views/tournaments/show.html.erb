@@ -19,8 +19,10 @@
 </p>
 
     <h2>Played Matches</h2>
-      <% for match in @tournament.played_matches %>
-(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %> <%= h match.scores %><br/>
+      <% for match in @tournament.played_matches
+           player_a_class = match.winner.username == match.player_a.username ? "winner" : "looser"
+           player_b_class = match.winner.username == match.player_b.username ? "winner" : "looser" %>
+(<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <span class="match<%= player_a_class %>"><%= h match.player_a.username %></span> vs <span class="match<%= player_b_class %>"><%= h match.player_b.username %></span>: <%= h match.scores %><br/>
       <% end %>
 </div> <!-- .yui-u -->
 </div> <!-- .yui-b -->
