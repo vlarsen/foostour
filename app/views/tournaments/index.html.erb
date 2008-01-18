@@ -8,12 +8,10 @@
 
 <% for tournament in @tournaments %>
   <tr class="tournament-<%=h tournament.active? ? "active" : "inactive" %>">
-    <td><%=h tournament.name %></td>
+    <td><%= tournament.active? ? (link_to tournament.name, tournament) : (link_to tournament.name, edit_tournament_path(tournament)) %></td>
     <td><%=h tournament.structure %></td>
     <td><%=h tournament.level %></td>
     <td><%=h tournament.startdate %>/<%=h tournament.enddate %></td>
-    <td><%= tournament.active? ? (link_to 'Show', tournament) : "" %></td>
-    <td><%= tournament.active? ? "" : (link_to 'Edit', edit_tournament_path(tournament)) %></td>
     <td><%= link_to 'Destroy', tournament, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
