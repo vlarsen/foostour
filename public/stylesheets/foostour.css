@@ -74,6 +74,11 @@ div.progressBar div.background {
 
 
 
+#ft {
+    margin: 2em 0em 0em 0em;
+    text-align: center;
+}
+
 .menu {
     background: #E4EEF1;
     font-size: large;
