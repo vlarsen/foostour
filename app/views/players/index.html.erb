@@ -1,6 +1,6 @@
-<h1>Listing players</h1>
-
-<table>
+<div class="yui-t7">
+  <div class="yui-b">
+  <table>
   <tr>
     <th>Username</th>
     <th>Firstname</th>
@@ -12,13 +12,12 @@
 
 <% for player in @players %>
   <tr>
-    <td><%=h player.username %></td>
+    <td><%= link_to player.username, player %></td>
     <td><%=h player.firstname %></td>
     <td><%=h player.lastname %></td>
     <td><%=image_tag "flags/#{player.country.downcase}.gif" %></td>
     <td><%=h player.gender %></td>
     <td><%=h player.birthdate %></td>
-    <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -28,3 +27,5 @@
 <br />
 
 <%= link_to 'New player', new_player_path %>
+  </div>  <!-- .yui-b -->
+</div>  <!-- .yui-t7 -->

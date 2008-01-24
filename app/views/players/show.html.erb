@@ -1,3 +1,6 @@
+<div class="yui-t6">
+  <div id="yui-main">
+    <div class="yui-b">
 <div style="float: left; margin: 10px;">
   <%= image_tag "players/#{@player.username}.jpg" %>
 </div>
@@ -37,10 +40,14 @@
   <b>Birthdate:</b>
   <%=h @player.birthdate %>
 </p>
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
+
 </div>
+    </div>  <!-- .yui-b -->
+  </div>  <!-- #yui-main -->
 
-<hr style="clear: both" />
-
+  <div class="yui-b">
 <h2>Tournament participations</h2>
 <ul>
 <% for part in @player.participations %>
@@ -54,6 +61,5 @@
 <li><%= h match.player_a.username %> vs <%= h match.player_b.username %> - <%= link_to "Details", match_path(match.id) %></li>
 <% end %>
 </ul>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+  </div>  <!-- .yui-b -->
+</div>  <!-- .yui-t6 -->
