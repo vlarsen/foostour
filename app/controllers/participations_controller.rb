@@ -25,8 +25,11 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   # GET /participations/new.xml
+  # GET /tournaments/:tournament_id/participations/new
+  # GET /tournaments/:tournament_id/participations/new.xml
   def new
     @participation = Participation.new
+    @participation.tournament_id = params[:tournament_id]
     @players = Player.find(:all, :order => "firstname")
     @tournaments = Tournament.find(:all, :order => "startdate")
 

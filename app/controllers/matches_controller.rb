@@ -27,6 +27,7 @@ class MatchesController < ApplicationController
   # GET /matches/new.xml
   def new
     @match = Match.new
+    @match.tournament_id = params[:tournament_id]
     @players = Player.find(:all, :order => "firstname")
     @tournaments = Tournament.all_active
 

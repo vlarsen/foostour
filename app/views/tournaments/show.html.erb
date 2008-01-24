@@ -15,7 +15,7 @@
 (<%= link_to 'Show', match %> <%= link_to 'Edit', edit_match_path(match) %>) <%=h match.round %>. <%= h match.player_a.username %> vs <%= h match.player_b.username %><br/>
     <% end %>
 
-    <%= link_to 'New match', new_match_path %>
+    <%= link_to 'New match', new_tournament_match_path(@tournament.id) %>
 </p>
 
     <h2>Played Matches</h2>
@@ -42,12 +42,12 @@
           <td><%= h participation.rank %> <%= medal_img(participation.rank)%></td>
           <td><%= h participation.points %></td>
           <td><%= link_to participation.player.fullname, player_path(participation.player_id) %></td>
-          <td><%= link_to "Edit", edit_participation_path(participation.id) %></td>
+          <td><%= link_to "Edit", edit_tournament_participation_path(@tournament.id, participation.id) %></td>
         </tr>
     <% end %>
       </tbody>
     </table>
-    <%= link_to 'New participation', new_participation_path %>
+    <%= link_to 'New participation', new_tournament_participation_path(@tournament.id) %>
     
   </div> <!-- .yui-b -->
 </div> <!-- .yui-t6 -->

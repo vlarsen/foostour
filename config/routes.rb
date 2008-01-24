@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :participations
 
-  map.resources :tournaments
+  map.resources :tournaments, :has_many => [:participations, :matches]
 
   map.resources :players
 
