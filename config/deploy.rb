@@ -1,5 +1,5 @@
 set :application, "foostour"
-set :repository,  "kali.trondheim.corp.yahoo.com:/Users/vlarsen/devel/rails/foostour"
+set :repository,  "/repo/foostour.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
