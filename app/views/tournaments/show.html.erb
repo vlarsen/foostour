@@ -7,7 +7,7 @@
 </div> <!-- .yui-u -->
 
 <div class="yui-u">
-  <p><%=h Tournament.structure_descr(@tournament.structure) %></p>
+  <p><%= link_to Tournament.structure_descr(@tournament.structure), :overwrite_params => { :action => "chart" }  %></p>
 
     <h2>Unplayed Matches</h2>
 <p>

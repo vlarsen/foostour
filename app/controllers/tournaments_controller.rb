@@ -26,7 +26,7 @@ class TournamentsController < ApplicationController
   
   def chart
     @tournament = Tournament.find(params[:id])
-    @participations = @tournament.participations
+    @chart_name = "2008%02d" % @tournament.id
 
     respond_to do |format|
       format.html # show.html.erb
