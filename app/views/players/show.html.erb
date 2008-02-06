@@ -51,14 +51,14 @@
 <h2>Tournament participations</h2>
 <ul>
 <% for part in @player.participations %>
-<li><%= h part.rank %> - <%= link_to part.tournament.name, tournament_path(part.tournament_id) %></li>
+<li><%= link_to part.tournament.name, tournament_path(part.tournament_id) %> - <%= (part.rank == nil || part.rank > 3) ? part.rank : medal_img(part.rank) %></li>
 <% end %>
 </ul>
 
 <h2>Matches won</h2>
 <ul>
 <% for match in @player.matches_won %>
-<li><%= h match.player_a.username %> vs <%= h match.player_b.username %> - <%= link_to "Details", match_path(match.id) %></li>
+<li><%= link_to match.player_a.username + " vs " + match.player_b.username, match_path(match.id), :title => match.scores %></li>
 <% end %>
 </ul>
   </div>  <!-- .yui-b -->
